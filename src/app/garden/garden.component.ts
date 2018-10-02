@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Plants } from '../plants';
 
 @Component({
   selector: 'app-garden',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class GardenComponent implements OnInit {
 
-  constructor() { }
+  plant: Plants ={
+    id: 1, 
+    name: 'Belladonna'
+  };
+
+  constructor() { 
+  }
 
   ngOnInit() {
   }
-
+  
 }
