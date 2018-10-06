@@ -1,8 +1,21 @@
-<h2>{{plant.name | uppercase}} Details</h2>
-<div><span>id: </span>{{plant.id}}</div>
-<div><span>name: </span>{{plant.name}}</div>
-<div>
-  <label>name:
-    <input [(ngModel)]="hero.plant" placeholder="name">
-  </label>
-</div>
+<h2>The Garden</h2>
+<ul class="plants">
+  <li *ngFor="let plants of Plants" 
+  [class.selected]="plants === selectedPlants"
+  (click)="onSelect(plants)">
+    <span class="badge">{{plants.id}}</span> {{plants.name}}
+  </li>
+</ul>
+
+<div *ngIf="selectedPlants">
+ 
+    <h2>{{selectedPlants.name | uppercase}} Details</h2>
+    <div><span>id: </span>{{selectedPlants.id}}</div>
+    <div>
+      <label>name:
+        <input [(ngModel)]="selectedPlants.name" placeholder="name">
+      </label>
+    </div>
+   
+  </div>
+  

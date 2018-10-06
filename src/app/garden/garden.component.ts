@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Plants } from '../plants';
+import { PLANTS } from '../mock-plants';
 
 @Component({
   selector: 'app-garden',
@@ -8,15 +9,17 @@ import { Plants } from '../plants';
 })
 export class GardenComponent implements OnInit {
 
-  plant: Plants ={
-    id: 1, 
-    name: 'Belladonna'
-  };
+  Plants = PLANTS;
+  selectPlants = Plants;
 
   constructor() { 
   }
 
   ngOnInit() {
   }
-  
+
+  onSelect(plants): void {
+    this.selectPlants = plants;
+  }
+
 }
